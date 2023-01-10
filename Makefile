@@ -10,7 +10,7 @@ CC = gcc
 
 CFLAGS = -g -Werror -Wextra -Wall
 
-LIBS =	libft/libft.a		\
+LIBS =	includes/libft/libft.a		\
 
 all: $(NAME)
 
