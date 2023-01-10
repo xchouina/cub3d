@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xchouina <xchouina@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: tberube- <tberube-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 09:38:31 by mjarry            #+#    #+#             */
-/*   Updated: 2022/11/03 11:49:41 by xchouina         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:04:15 by tberube-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,8 @@ int		ft_is_str_alnum(char *str);
 char	*ft_charrm(char *str, char *s);
 char	*ft_charadd(char *str, char c, char *s);
 char	*ft_strjoinf2(char *s1, char *s2);
+
+// AJOUT CUB3D
+int		ft_strendcmp(const char *s, const char *suffix);
 
 #endif

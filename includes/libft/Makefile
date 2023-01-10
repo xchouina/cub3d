@@ -67,6 +67,7 @@ SRC =	ft_arrayadd.c			\
 		get_next_line_utils.c	\
 		ft_free2d.c				\
 		ft_strjoinf2.c			\
+		ft_strendcmp.c			\
 
 NAME = libft.a
 CC = gcc
