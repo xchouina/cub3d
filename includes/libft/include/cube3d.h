@@ -10,7 +10,8 @@
 
 typedef struct s_game
 {
-
+	int	height_fd;
+	int	width_fd;
 }t_game;
 
 typedef struct s_pos
@@ -23,5 +24,9 @@ typedef struct s_textures
 {
 
 }t_textures;
+
+int		main(int argc, char *argv);
+void	quit(int fd);
+void	map_dimension(t_game *game, int fd);
 
 #endif
