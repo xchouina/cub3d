@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 #include <stdio.h>
 
 int	ft_strendcmp(const char *s, const char *suffix)

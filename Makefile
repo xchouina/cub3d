@@ -1,6 +1,8 @@
 ###_*_*_*_*_*_*_*_*_*_*_*_*_Makefile_cub3d_*_*_*_*_*_*_*_*_*_*_*_*_###
 ###-------------------------# VARIABLES ##-------------------------###
-SRCS =	
+CFILES =	cub3d.c quit.c fd_parsing.c \
+
+SRCS = $(addprefix srcs/, $(CFILES))
 
 NAME = cub3d
 
@@ -8,7 +10,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = gcc
 
-CFLAGS = -g -Werror -Wextra -Wall
+CFLAGS = -g -Werror -Wextra -Wall -Iincludes -I.
 
 LIBS =	libft/libft.a		\
 
