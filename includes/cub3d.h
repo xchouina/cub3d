@@ -1,12 +1,12 @@
-#ifndef CUBE3D_H
-# include CUBE3D_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
 # include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include "libft.h"
+# include <libft/include/libft.h>
 
 typedef struct s_game
 {
@@ -25,8 +25,8 @@ typedef struct s_textures
 
 }t_textures;
 
-int		main(int argc, char *argv);
-void	quit(int fd);
+void	ft_quit(int fd);
 void	map_dimension(t_game *game, int fd);
+void	fd_parsing(t_game *game, int fd);
 
 #endif
