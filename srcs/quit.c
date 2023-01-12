@@ -1,8 +1,8 @@
-#include "cube3d.h"
+#include "cub3d.h"
 
-void	quit(int fd)
+void	ft_quit(int fd)
 {
 	close(fd);
-	ft_putstr_fd("Map invalid", 2);
+	ft_putstr_fd("Map invalid\n", 2);
 	exit(0);
 }
