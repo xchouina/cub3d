@@ -2,10 +2,11 @@
 
 void	fd_parsing(t_game *game, int fd)
 {
-	char			*str;
-	char			*tmp;
+	char	*str;
+	char	*tmp;
 
 	game->height_fd = 1;
+	printf("fd = %d\n", fd);
 	str = get_next_line(fd);
 	tmp = ft_strtrim(str, "\n");
 	free(str);
@@ -18,6 +19,7 @@ void	fd_parsing(t_game *game, int fd)
 		if (!str)
 			break ;
 		game->height_fd++;
+		printf("height = %d\n", game->height_fd);
 		free(str);
 	}	
 }
