@@ -10,4 +10,5 @@ int	main(int argc, char **argv)
 	if (!ft_strendcmp(argv[1], ".cub"))
 		ft_quit(fd);
 	fd_parsing(&game, fd);
+	starting_engine(game);
 }

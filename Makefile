@@ -1,6 +1,9 @@
 ###_*_*_*_*_*_*_*_*_*_*_*_*_Makefile_cub3d_*_*_*_*_*_*_*_*_*_*_*_*_###
 ###-------------------------# VARIABLES ##-------------------------###
-CFILES =	cub3d.c quit.c fd_parsing.c \
+CFILES =	cub3d.c				\
+			quit.c				\
+			fd_parsing.c		\
+			raycasting/engine.c	\
 
 SRCS = $(addprefix srcs/, $(CFILES))
 
@@ -12,7 +15,7 @@ CC = gcc
 
 CFLAGS = -g -Werror -Wextra -Wall -Iincludes -I.
 
-LIBS =	includes/libft/libft.a		\
+LIBS =	libft/libft.a		\
 
 all: $(NAME)
 
