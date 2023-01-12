@@ -19,7 +19,7 @@ void	sky_n_ground(t_game *game)
 	{
 		while (++y < game->map_y)
 		{
-			my_mlx_pixel_put(game, x, y, 0x00009933);
+			my_mlx_pixel_put(game, x, y, 0x0099FF99);
 		}
 		y = 0;
 		x++;

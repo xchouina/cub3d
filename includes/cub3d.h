@@ -16,7 +16,18 @@ typedef struct s_game
 	int		map_x;
 	int		map_y;
 
-	
+
+	void	*ylw_dot;
+	void	*wall;
+
+
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+
+
 	int	height_fd;
 	int	width_fd;
 }t_game;
@@ -40,6 +51,7 @@ void	fd_parsing(t_game *game, int fd);
 
 
 // ENGINE
-void	starting_engine(t_game	game);
+void	starting_engine(t_game	*game);
+void	init_assets(t_game	*game);
 
 #endif
