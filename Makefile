@@ -2,7 +2,8 @@
 ###-------------------------# VARIABLES ##-------------------------###
 CFILES =	cub3d.c 		\
 			quit.c 			\
-			fd_parsing.c	\
+			parsing.c		\
+			create_tab.c	\
 
 SRCS = $(addprefix srcs/, $(CFILES))
 
