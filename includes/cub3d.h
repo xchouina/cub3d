@@ -6,8 +6,9 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <libft/include/libft.h>
-# include <mlx.h>
 # include <math.h>
+# include "../minilibx/mlx.h"
+
 
 typedef struct s_game
 {

@@ -16,6 +16,7 @@ CC = gcc
 CFLAGS = -g -Werror -Wextra -Wall -Iincludes -I.
 
 LIBS =	libft/libft.a		\
+		minilibx/libmlx.a	\
 
 all: $(NAME)
 
@@ -24,7 +25,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(MAKE) -C libft
-	@ $(CC) $(CFLAGS) $(OBJS) $(LIBS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@ $(CC) $(CFLAGS) $(OBJS) $(LIBS) -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "CUB3D	|	STATUS: \033[0;32mOK\033[0;00m"
 	@echo "---------------------------------------------"
 
