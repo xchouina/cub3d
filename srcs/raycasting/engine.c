@@ -18,9 +18,7 @@ void	sky_n_ground(t_game *game)
 	while (x < game->map_x)
 	{
 		while (++y < game->map_y)
-		{
 			my_mlx_pixel_put(game, x, y, 0x0099FF99);
-		}
 		y = 0;
 		x++;
 	}
@@ -29,12 +27,11 @@ void	sky_n_ground(t_game *game)
 	while (x < (game->map_x))
 	{
 		while (++y < (game->map_y / 2))
-		{
 			my_mlx_pixel_put(game, x, y, 0x00CCFFFF);
-		}
 		y = 0;
 		x++;
 	}
+	mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
 }
 
 void	starting_engine(t_game	*game)
@@ -51,7 +48,6 @@ void	starting_engine(t_game	*game)
 	game->img = mlx_new_image(game->mlx, 1920, 1080);
 	game->addr = mlx_get_data_addr(game->img, &game->bits_per_pixel, &game->line_length,
 								&game->endian);
-	
 	sky_n_ground(game);
 	mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
 
@@ -62,13 +58,31 @@ void	starting_engine(t_game	*game)
 	mlx_loop(game->mlx);
 }
 
-// void	init_assets(t_game	*game)
-// {
-// 	int	width;
-// 	int	height;
+void	init_assets(t_game	*game)
+{
+	int	width;
+	int	height;
 
-// 	width = 1000;
-// 	height = 1000;
-// 	game->ylw_dot = mlx_xpm_file_to_image(game->mlx,
-// 			"../../textures/ylw_dot.xpm", &width, &height);
-// }
+	width = 1000;
+	height = 1000;
+	game->ylw_dot = mlx_xpm_file_to_image(game->mlx,
+			"../../textures/ylw_dot.xpm", &width, &height);
+	game->wall = mlx_xpm_file_to_image(game->mlx,
+			"../../textures/2d_wall.xpm", &width, &height);
+}
+
+void	put_img(t_vars *vars, int x, int y)
+{
+	void	*mlx;
+	void	*window;
+
+	mlx = vars->mlx;
+	window = vars->window;
+	if (vars->map_tab[y][x] == '1')
+		mlx_put_image_to_window(mlx, window, vars->wall, (75 * x), (75 * y));
+	else
+		mlx_put_image_to_window(mlx, window, vars->ground, (75 * x), (75 * y));
+	if (vars->map_tab[y][x] == 'P')
+		mlx_put_image_to_window(mlx, window, vars->player, (75 * x), (75 * y));
+}
+
