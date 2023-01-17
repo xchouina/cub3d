@@ -36,29 +36,13 @@ void	sky_n_ground(t_game *game)
 
 void	init_assets(t_game	*game)
 {
-	// int	width;
-	// int	height;
-
-	game->width = 100;
-	game->height = 100;
+	game->width = 30;
+	game->height = 30;
 	// game->ylw_dot = mlx_xpm_file_to_image(game->mlx,
 	// 		"../../textures/ylw_dot.xpm", &width, &height);
 	game->wall = mlx_xpm_file_to_image(game->mlx,
-			"wall.xpm", &game->width, &game->height);
-			printf("%s = wall", game->wall);
+					"textures/2d_wall.xpm", &game->width, &game->height);
 }
-
-// void	cube_pixel(t_game *game, int x, int y)
-// {
-// 	while (x < (101 + x))
-// 	{
-// 		while (y < (101 + y))
-// 			my_mlx_pixel_put(game, x, y++, 0x00000000);
-// 		y = 0;
-// 		x++;
-// 	}
-// 	mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
-// }
 
 void	starting_engine(t_game	*game)
 {
@@ -68,47 +52,24 @@ void	starting_engine(t_game	*game)
 	game->window = mlx_new_window(game->mlx, game->res_x, game->res_y, "cub3d");
 	game->img = mlx_new_image(game->mlx, game->res_x, game->res_y);
 
-	game->addr = mlx_get_data_addr(game->img, &game->bits_per_pixel, &game->line_length,
-								&game->endian);
+	game->addr = mlx_get_data_addr(game->img, &game->bits_per_pixel,
+					&game->line_length, &game->endian);
 	sky_n_ground(game);
 	// cube_pixel(game, 100, 100);
 										// mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
 	init_assets(game);
 
-	// mlx_put_image_to_window(game->mlx, game->window, game->wall, (100 * 0), (100 * 0));
+
+	mlx_put_image_to_window(game->mlx, game->window, game->wall, 0, 0);
 
 	mlx_loop(game->mlx);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// void	put_img(t_vars *vars, int x, int y)
+// minimap_creation(t_game *game)
 // {
-// 	void	*mlx;
-// 	void	*window;
-
-// 	mlx = vars->mlx;
-// 	window = vars->window;
-// 	if (vars->map_tab[y][x] == '1')
-// 		mlx_put_image_to_window(mlx, window, vars->wall, (75 * x), (75 * y));
-// 	else
-// 		mlx_put_image_to_window(mlx, window, vars->ground, (75 * x), (75 * y));
-// 	if (vars->map_tab[y][x] == 'P')
-// 		mlx_put_image_to_window(mlx, window, vars->player, (75 * x), (75 * y));
+// 	// INSERT: 
+// 	// if (vars->map_tab[y][x] == '1')
+// 	// 	mlx_put_image_to_window(mlx, window, vars->wall, (25 * x), (25 * y));
+// 	// else
+// 	// 	mlx_put_image_to_window(mlx, window, vars->ground, (25 * x), (25 * y));
 // }
-
