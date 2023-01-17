@@ -7,6 +7,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <libft/include/libft.h>
+# include <unistd.h>
 
 typedef struct s_game
 {
