@@ -14,14 +14,15 @@ typedef struct s_game
 {
 	void	*mlx;
 	void	*window;
-	int		map_x;
-	int		map_y;
+	int		res_x;
+	int		res_y;
 
 
 	void	*ylw_dot;
 	void	*wall;
 
-
+	int		width;
+	int		height;
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
