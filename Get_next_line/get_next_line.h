@@ -19,9 +19,8 @@
 # include <stdlib.h>
 # include <limits.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+#undef BUFFER_SIZE
+# define BUFFER_SIZE 1
 
 char	*get_next_line(int const fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
