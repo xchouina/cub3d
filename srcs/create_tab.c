@@ -21,7 +21,7 @@ void	fd_create_map_tab(t_game *game, int fd, char *argv)
 		free(str);
 	}
 	close(fd);
-	fd = open(argv, O_RDONLY);
+	fd = open_fd(argv);
 	fill_tab(game, fd);
 }
 
@@ -45,8 +45,10 @@ void	**fill_tab(t_game *game, int fd)
 	return (0);
 }
 
-int	open_fd(char *argv, int fd)
+int	open_fd(char *argv)
 {
+	int fd;
+
 	fd = open(argv, O_RDONLY);
 	if (fd == -1)
 	{
@@ -55,5 +57,5 @@ int	open_fd(char *argv, int fd)
 	}
 	if (!ft_strendcmp(argv, ".cub"))
 		ft_quit(fd);
-	return (0);
+	return (fd);
 }

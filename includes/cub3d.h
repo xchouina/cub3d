@@ -31,7 +31,8 @@ typedef struct s_textures
 void	ft_quit(int fd);
 void	fd_create_map_tab(t_game *game, int fd, char *argv);
 void	**fill_tab(t_game *game, int fd);
-int		open_fd(char *argv, int fd);
+int		open_fd(char *argv);
 int		parsing(t_game *game, int fd, char *argv);
+void	print_tab(t_game *map);
 
 #endif
