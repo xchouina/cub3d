@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+*.txt
+*.out
+*.swp
+**.a
+**.dSYM
+.DS_Store
+.vscode
+cub3D
+cub3d.dSYM

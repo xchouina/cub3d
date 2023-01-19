@@ -8,7 +8,7 @@
 # include <libft/include/libft.h>
 # include <math.h>
 # include "../minilibx/mlx.h"
-
+# include "../srcs/Get_next_line/get_next_line.h"
 
 typedef struct s_game
 {
@@ -18,8 +18,11 @@ typedef struct s_game
 	int		res_y;
 
 
-	void	*ylw_dot;
+// ASSETS
+	void	*dot;
 	void	*wall;
+	void	*ground;
+// 
 
 	int		width;
 	int		height;

@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	my_mlx_pixel_put(t_game	*game, int x, int y, int color)
 {
@@ -38,10 +38,42 @@ void	init_assets(t_game	*game)
 {
 	game->width = 30;
 	game->height = 30;
-	// game->ylw_dot = mlx_xpm_file_to_image(game->mlx,
-	// 		"../../textures/ylw_dot.xpm", &width, &height);
+	game->dot = mlx_xpm_file_to_image(game->mlx,
+			"textures/ylw_dot.xpm", &game->width, &game->height);
 	game->wall = mlx_xpm_file_to_image(game->mlx,
 					"textures/2d_wall.xpm", &game->width, &game->height);
+}
+
+void	put_minimap(t_game *game, int x, int y)
+{
+	void	*mlx;
+	void	*window;
+
+	mlx = game->mlx;
+	window = game->window;
+	if (game->map[y][x] == '1')
+		mlx_put_image_to_window(mlx, window, game->wall, (25 * x), (25 * y));
+	// else if (game->map[y][x] == '0')
+	// 	mlx_put_image_to_window(mlx, window, game->ground, (25 * x), (25 * y));
+}
+
+void	map_creation(t_game *game)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	x = 0;
+	while (y < game->res_y) 
+	{
+		x = 0;
+		while (x < game->res_x)
+		{
+			put_minimap(game, x, y);
+			x++;
+		}
+		y++;
+	}
 }
 
 void	starting_engine(t_game	*game)
@@ -59,6 +91,8 @@ void	starting_engine(t_game	*game)
 										// mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
 	init_assets(game);
 
+	ft_arrayprint(game->map);
+	// map_creation(game);
 
 	mlx_put_image_to_window(game->mlx, game->window, game->wall, 0, 0);
 

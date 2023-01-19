@@ -1,33 +1,40 @@
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	fd_create_map_tab(t_game *game, int fd, char *argv)
 {
 	char	*str;
-	char	*tmp;
-	
-	game->height_fd = 1;
-	str = get_next_line(fd);
-	tmp = ft_strtrim(str, "\n");
-	free(str);
-	game->width_fd = ft_strlen(tmp);
-	free(tmp);
-	str = "";
-	while (str)
+	char	*res;
+	//in this version argv is not  used, could be removed
+	(void)argv;
+
+	res = NULL;
+	game->height_fd = 0;
+	// str = get_next_line(fd);
+	// tmp = ft_strtrim(str, "\n");
+	// free(str);
+	// game->width_fd = ft_strlen(tmp);
+	// free(tmp);
+	while (1)
 	{
 		str = get_next_line(fd);
+	dprintf(2, "here\n");
+		//in strjoin, you should be freeing res right before the end if res != NULL
+		res = ft_strjoin(res, str);
 		if (!str)
 			break ;
 		game->height_fd++;
 		free(str);
 	}
+	game->map = ft_split(res, '\n');
+	game->width_fd = ft_strlen(game->map[0]);
 	close(fd);
-	fd = open(argv, O_RDONLY);
-	fill_tab(game, fd);
+	// fd = open(argv, O_RDONLY);
+	// fill_tab(game, fd);
 }
 
 void	**fill_tab(t_game *game, int fd)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	game->map = ft_calloc(game->height_fd, sizeof(char *));

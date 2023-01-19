@@ -63,8 +63,6 @@ SRC =	ft_arrayadd.c			\
 		ft_swap.c				\
 		ft_tolower.c			\
 		ft_toupper.c			\
-		get_next_line.c			\
-		get_next_line_utils.c	\
 		ft_free2d.c				\
 		ft_strjoinf2.c			\
 		ft_strendcmp.c			\
