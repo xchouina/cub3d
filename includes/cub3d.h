@@ -14,7 +14,9 @@ typedef struct s_game
 	int		height_fd;
 	int		width_fd;
 	char	**map;
-
+	char	**tab_fd;
+	int		map_start;
+	int		map_height;
 }t_game;
 
 typedef struct s_pos
@@ -29,10 +31,15 @@ typedef struct s_textures
 }t_textures;
 
 void	ft_quit(int fd);
-void	fd_create_map_tab(t_game *game, int fd, char *argv);
-void	**fill_tab(t_game *game, int fd);
+void	fd_create_tab_fd(t_game *game, int fd, char *argv);
+void	fill_tab_fd(t_game *game, int fd);
 int		open_fd(char *argv);
 int		parsing(t_game *game, int fd, char *argv);
-void	print_tab(t_game *map);
+void	print_tab_fd(t_game *map);
+void	fd_create_tab_map(t_game *game);
+void	fill_tab_map(t_game *game);
+void	incr_map_height(char *str, t_game *map);
+void	print_map(t_game *tab);
+void	fill_map_tab(t_game *game);
 
 #endif

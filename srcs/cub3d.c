@@ -10,18 +10,31 @@ int	main(int argc, char **argv)
 	// open_fd(argv[1]);
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
-	print_tab(&game);
+	//print_tab_fd(&game);
+	//print_map(&game);
 	return (0);
 }
 
-void	print_tab(t_game *map)
+void	print_tab_fd(t_game *tab)
 {
 	int	i;
 
 	i = 0;
-	while (i < map->height_fd)
+	while (i < tab->height_fd)
 	{
-		printf("[%d]%s\n", i, map->map[i]);
+		printf("[%d]%s\n", i, tab->tab_fd[i]);
+		i++;
+	}
+}
+
+void	print_map(t_game *tab)
+{
+	int	i;
+
+	i = 0;
+	while (i < tab->map_height - 1)
+	{
+		printf("[%d]%s\n", i, tab->map[i]);
 		i++;
 	}
 }
