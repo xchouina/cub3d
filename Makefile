@@ -2,7 +2,7 @@
 ###-------------------------# VARIABLES ##-------------------------###
 CFILES =	cub3d.c				\
 			quit.c				\
-			fd_parsing.c		\
+			parsing.c		\
 			raycasting/engine.c	\
 			create_tab.c		\
 

@@ -5,12 +5,36 @@ int	main(int argc, char **argv)
 	t_game	game;
 	int		fd;
 
-	if (argc != 2)
-		return (0);
-	fd = open(argv[1], O_RDONLY);
-	if (!ft_strendcmp(argv[1], ".cub"))
-		ft_quit(fd);
+	(void)argc;
+	fd = 0;
+	// open_fd(argv[1]);
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
-	starting_engine(&game);
+	print_tab_fd(&game);
+	//print_map(&game);
+	return (0);
+}
+
+void	print_tab_fd(t_game *tab)
+{
+	int	i;
+
+	i = 0;
+	while (i < tab->height_fd)
+	{
+		printf("[%d]%s\n", i, tab->tab_fd[i]);
+		i++;
+	}
+}
+
+void	print_map(t_game *tab)
+{
+	int	i;
+
+	i = 0;
+	while (i < tab->map_height - 1)
+	{
+		printf("[%d]%s\n", i, tab->map[i]);
+		i++;
+	}
 }
