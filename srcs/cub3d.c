@@ -10,7 +10,7 @@ int	main(int argc, char **argv)
 	// open_fd(argv[1]);
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
-	//print_tab_fd(&game);
+	print_tab_fd(&game);
 	//print_map(&game);
 	return (0);
 }
