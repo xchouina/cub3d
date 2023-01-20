@@ -42,4 +42,7 @@ void	incr_map_height(char *str, t_game *map);
 void	print_map(t_game *tab);
 void	fill_map_tab(t_game *game);
 
+
+void	starting_engine(t_game	*game);
+
 #endif
