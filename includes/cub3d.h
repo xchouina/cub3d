@@ -11,6 +11,27 @@
 
 typedef struct s_game
 {
+	void	*mlx;
+	void	*window;
+	int		res_x;
+	int		res_y;
+
+
+// ASSETS
+	void	*dot;
+	void	*wall;
+	void	*ground;
+// 
+
+	int		width;
+	int		height;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+
+
 	int		height_fd;
 	int		width_fd;
 	char	**map;
