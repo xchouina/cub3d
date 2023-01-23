@@ -4,6 +4,7 @@ CFILES =	cub3d.c 		\
 			quit.c 			\
 			parsing.c		\
 			create_tab.c	\
+			check_map.c		\
 
 SRCS = $(addprefix srcs/, $(CFILES))
 

@@ -60,50 +60,6 @@ int	open_fd(char *argv)
 	return (fd);
 }
 
-// void	fd_create_tab_map(t_game *game, int fd)
-// {
-// 	char	*str;
-// 	char	*tmp;
-	
-// 	game->height_fd = 1;
-// 	str = get_next_line(fd);
-// 	tmp = ft_strtrim(str, "\n");
-// 	free(str);
-// 	game->width_fd = ft_strlen(tmp);
-// 	free(tmp);
-// 	str = "";
-// 	while (str)
-// 	{
-// 		str = get_next_line(fd);
-// 		if (!str)
-// 			break ;
-// 		incr_map_height(str, game);
-// 		free(str);
-// 	}
-// 	close(fd);
-// 	fill_tab_map(game);
-// }
-
-// void	**fill_tab_map(t_game *game)
-// {
-// 	int		i;
-
-// 	i = 0;
-// 	game->map = ft_calloc(game->height_fd, sizeof(char *));
-// 	printf("game height =%d\n", game->height_fd);
-// 	while (game->map != NULL)
-// 	{
-// 		printf("%s\n", game->tab_fd[game->map_start]);
-// 		game->map[i] = ft_strdup(game->tab_fd[game->map_start]);
-// 		printf("%s\n", game->map[i]);
-// 		if (!game->map[i])
-// 			break ;
-// 		i++;
-// 		game->map_start++;
-// 	}
-// 	return (0);
-// }
-
 void	fd_create_tab_map(t_game *game)
 {
 	int	i;
@@ -133,7 +89,6 @@ void	fd_create_tab_map(t_game *game)
 		j = 0;
 		i++;
 	}
-	printf("game_height = %d\n", game->map_height);
 	fill_map_tab(game);
 }
 

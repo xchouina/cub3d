@@ -17,6 +17,14 @@ typedef struct s_game
 	char	**tab_fd;
 	int		map_start;
 	int		map_height;
+	int		checker;
+	int		dir_NO;
+	int		dir_SO;
+	int		dir_WE;
+	int		dir_EA;
+	int		dir_F;
+	int		dir_C;
+	int		direction_complete;
 }t_game;
 
 typedef struct s_pos
@@ -41,5 +49,12 @@ void	fill_tab_map(t_game *game);
 void	incr_map_height(char *str, t_game *map);
 void	print_map(t_game *tab);
 void	fill_map_tab(t_game *game);
+void	check_direction(t_game *game);
+void	check_direction_2(t_game *game, int i);
+void	check_direction_complete(t_game *game);
+void	check_if_map_last(t_game *game, int i);
+void	check_map(t_game *game);
+void	check_symbol_and_doublon(t_game *game);
+void	check_end_line(t_game *game, int i, int j);
 
 #endif
