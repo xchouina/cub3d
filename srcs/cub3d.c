@@ -3,15 +3,18 @@
 int	main(int argc, char **argv)
 {
 	t_game	game;
+	t_pos	player;
 	int		fd;
 
 	(void)argc;
+	(void)player;
 	fd = 0;
 	// open_fd(argv[1]);
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
 	//print_tab_fd(&game);
 	//print_map(&game);
+	print_player_pos(&game);
 	return (0);
 }
 
@@ -37,4 +40,10 @@ void	print_map(t_game *tab)
 		printf("[%d]%s\n", i, tab->map[i]);
 		i++;
 	}
+}
+
+void	print_player_pos(t_game *game)
+{
+	printf("player position X = %d\n", game->player.position_x);
+	printf("player position Y = %d\n", game->player.position_y);
 }

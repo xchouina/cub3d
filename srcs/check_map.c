@@ -2,6 +2,7 @@
 
 void	check_map(t_game *game)
 {
+	game->doublons = 0;
 	check_symbol_and_doublon(game);
 }
 
@@ -42,4 +43,19 @@ void	check_end_line(t_game *game, int i, int j)
 		game->checker = 1;
 		return ;
 	}
+	if (game->map[i][j] == 'W' || game->map[i][j] == 'E'\
+	 || game->map[i][j] == 'S' || game->map[i][j] == 'N')
+	{
+		game->player.position_x = i;
+		game->player.position_y = j;
+		if (game->doublons != 0)
+		{
+			printf("to mush player on map");
+			game->checker = 1;
+			return ;
+		}
+		else
+			game->doublons = 1;
+	}
+
 }
