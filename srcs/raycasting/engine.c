@@ -36,74 +36,40 @@ void	sky_n_ground(t_game *game)
 
 void	init_assets(t_game	*game)
 {
-	game->width = 30;
-	game->height = 30;
-	game->dot = mlx_xpm_file_to_image(game->mlx,
-			"textures/ylw_dot.xpm", &game->width, &game->height);
-	game->wall = mlx_xpm_file_to_image(game->mlx,
-					"textures/2d_wall.xpm", &game->width, &game->height);
-}
+	// int	width;
+	// int	height;
 
-void	put_minimap(t_game *game, int x, int y)
-{
-	void	*mlx;
-	void	*window;
-
-	mlx = game->mlx;
-	window = game->window;
-	if (game->map[y][x] == '1')
-		mlx_put_image_to_window(mlx, window, game->wall, (25 * x), (25 * y));
-	// else if (game->map[y][x] == '0')
-	// 	mlx_put_image_to_window(mlx, window, game->ground, (25 * x), (25 * y));
-}
-
-void	map_creation(t_game *game)
-{
-	int	y;
-	int	x;
-
-	y = 0;
-	x = 0;
-	while (y < game->res_y) 
-	{
-		x = 0;
-		while (x < game->res_x)
-		{
-			put_minimap(game, x, y);
-			x++;
-		}
-		y++;
-	}
+	game->width = 100;
+	game->height = 100;
+	// game->ylw_dot = mlx_xpm_file_to_image(game->mlx,
+	// 		"../../textures/ylw_dot.xpm", &width, &height);
+	game->wall_mm = mlx_xpm_file_to_image(game->mlx,
+			"textures/2d_wall.xpm", &game->width, &game->height);
+	game->ground_mm = mlx_xpm_file_to_image(game->mlx,
+			"textures/2d_wall.xpm", &game->width, &game->height);
 }
 
 void	starting_engine(t_game	*game)
 {
+
 	game->res_x = 1920;
 	game->res_y = 1080;
 	game->mlx = mlx_init();	
 	game->window = mlx_new_window(game->mlx, game->res_x, game->res_y, "cub3d");
 	game->img = mlx_new_image(game->mlx, game->res_x, game->res_y);
 
-	game->addr = mlx_get_data_addr(game->img, &game->bits_per_pixel,
-					&game->line_length, &game->endian);
+	game->addr = mlx_get_data_addr(game->img, &game->bits_per_pixel, &game->line_length,
+								&game->endian);
 	sky_n_ground(game);
 	// cube_pixel(game, 100, 100);
 										// mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
 	init_assets(game);
 
-	ft_arrayprint(game->map);
-	// map_creation(game);
-
-	mlx_put_image_to_window(game->mlx, game->window, game->wall, 0, 0);
+	map_creation(game);
+	// mlx_put_image_to_window(game->mlx, game->window, game->wall_mm, (100 * 0), (100 * 0));
 
 	mlx_loop(game->mlx);
 }
 
-// minimap_creation(t_game *game)
-// {
-// 	// INSERT: 
-// 	// if (vars->map_tab[y][x] == '1')
-// 	// 	mlx_put_image_to_window(mlx, window, vars->wall, (25 * x), (25 * y));
-// 	// else
-// 	// 	mlx_put_image_to_window(mlx, window, vars->ground, (25 * x), (25 * y));
-// }
+
+

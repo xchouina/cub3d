@@ -17,7 +17,6 @@ void	fd_create_map_tab(t_game *game, int fd, char *argv)
 	while (1)
 	{
 		str = get_next_line(fd);
-	dprintf(2, "here\n");
 		//in strjoin, you should be freeing res right before the end if res != NULL
 		res = ft_strjoin(res, str);
 		if (!str)

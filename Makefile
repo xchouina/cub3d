@@ -5,6 +5,7 @@ CFILES =	cub3d.c 		\
 			parsing.c		\
 			create_tab.c	\
 			raycasting/engine.c	\
+			raycasting/minimap.c
 
 SRCS = $(addprefix srcs/, $(CFILES))
 

@@ -19,8 +19,8 @@ typedef struct s_game
 
 // ASSETS
 	void	*dot;
-	void	*wall;
-	void	*ground;
+	void	*wall_mm;
+	void	*ground_mm;
 // 
 
 	int		width;
@@ -60,5 +60,5 @@ int		parsing(t_game *game, int fd, char *argv);
 // ENGINE
 void	starting_engine(t_game	*game);
 void	init_assets(t_game	*game);
-
+void	map_creation(t_game *game);
 #endif
