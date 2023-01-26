@@ -10,6 +10,14 @@
 # include <unistd.h>
 
 
+typedef struct s_textures
+{
+	char	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+}t_textures;
+
 typedef struct s_pos
 {
 	int	position_x;
@@ -37,6 +45,7 @@ typedef struct s_game
 	int		direction_complete;
 	int		doublons;
 	t_pos	player;
+	t_textures	textures;
 }t_game;
 
 typedef struct s_textures

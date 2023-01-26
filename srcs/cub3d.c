@@ -4,10 +4,12 @@ int	main(int argc, char **argv)
 {
 	t_game	game;
 	t_pos	player;
+	t_textures textures;
 	int		fd;
 
 	(void)argc;
 	(void)player;
+	(void)textures;
 	fd = 0;
 	// open_fd(argv[1]);
 	if (parsing(&game, fd, argv[1]) == 1)
