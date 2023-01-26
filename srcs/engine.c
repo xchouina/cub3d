@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	my_mlx_pixel_put(t_game	*game, int x, int y, int color)
 {
@@ -43,21 +43,11 @@ void	init_assets(t_game	*game)
 	game->height = 100;
 	// game->ylw_dot = mlx_xpm_file_to_image(game->mlx,
 	// 		"../../textures/ylw_dot.xpm", &width, &height);
-	game->wall = mlx_xpm_file_to_image(game->mlx,
-			"wall.xpm", &game->width, &game->height);
+	game->wall_mm = mlx_xpm_file_to_image(game->mlx,
+			"textures/2d_wall.xpm", &game->width, &game->height);
+	game->ground_mm = mlx_xpm_file_to_image(game->mlx,
+			"textures/2d_wall.xpm", &game->width, &game->height);
 }
-
-// void	cube_pixel(t_game *game, int x, int y)
-// {
-// 	while (x < (101 + x))
-// 	{
-// 		while (y < (101 + y))
-// 			my_mlx_pixel_put(game, x, y++, 0x00000000);
-// 		y = 0;
-// 		x++;
-// 	}
-// 	mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
-// }
 
 void	starting_engine(t_game	*game)
 {
@@ -74,40 +64,11 @@ void	starting_engine(t_game	*game)
 										// mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
 	init_assets(game);
 
-	// mlx_put_image_to_window(game->mlx, game->window, game->wall, (100 * 0), (100 * 0));
+	map_creation(game);
+	// mlx_put_image_to_window(game->mlx, game->window, game->wall_mm, (100 * 0), (100 * 0));
 
 	mlx_loop(game->mlx);
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// void	put_img(t_vars *vars, int x, int y)
-// {
-// 	void	*mlx;
-// 	void	*window;
-
-// 	mlx = vars->mlx;
-// 	window = vars->window;
-// 	if (vars->map_tab[y][x] == '1')
-// 		mlx_put_image_to_window(mlx, window, vars->wall, (75 * x), (75 * y));
-// 	else
-// 		mlx_put_image_to_window(mlx, window, vars->ground, (75 * x), (75 * y));
-// 	if (vars->map_tab[y][x] == 'P')
-// 		mlx_put_image_to_window(mlx, window, vars->player, (75 * x), (75 * y));
-// }
 

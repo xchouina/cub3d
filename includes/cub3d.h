@@ -1,12 +1,12 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include <mlx.h>
+# include "minilibx/mlx.h"
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include <libft/include/libft.h>
+# include "../libft/include/libft.h"
 # include <unistd.h>
 
 typedef struct s_game
@@ -19,8 +19,8 @@ typedef struct s_game
 
 // ASSETS
 	void	*dot;
-	void	*wall;
-	void	*ground;
+	void	*wall_mm;
+	void	*ground_mm;
 // 
 
 	int		width;
@@ -64,6 +64,8 @@ void	print_map(t_game *tab);
 void	fill_map_tab(t_game *game);
 
 
+
+void	map_creation(t_game *game);
 void	starting_engine(t_game	*game);
 
 #endif

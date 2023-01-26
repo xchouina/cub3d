@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tberube- <tberube-@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: xchouina <xchouina@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:39:52 by tberube-          #+#    #+#             */
-/*   Updated: 2022/03/04 10:02:36 by tberube-         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:30:47 by xchouina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	no_end_line(char **save, char *tampon);
 char	*end_fd(char *save, char *tampon, char *tmp);
 int		l_cnt(char *str, int c);
 char	*gratuit(char *detruis);
-int		*line_lenght(char *str, int c);
+int		*line_length(char *str, int c);
 
 #endif

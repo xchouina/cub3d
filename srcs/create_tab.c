@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	fd_create_tab_fd(t_game *game, int fd, char *argv)
 {

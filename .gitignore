@@ -60,5 +60,6 @@ dkms.conf
 **.dSYM
 .DS_Store
 .vscode
+.vscode/settings.json
 cub3D
 cub3d.dSYM

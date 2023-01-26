@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 int	main(int argc, char **argv)
 {
@@ -11,6 +11,7 @@ int	main(int argc, char **argv)
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
 	print_tab_fd(&game);
+	// ft_arrayprint(game.tab_fd);
 	starting_engine(&game);
 	return (0);
 }
