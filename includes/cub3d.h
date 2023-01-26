@@ -8,7 +8,7 @@
 # include <libft/include/libft.h>
 # include <math.h>
 # include "../minilibx/mlx.h"
-# include "../srcs/Get_next_line/get_next_line.h"
+# include "Get_next_line/get_next_line.h"
 
 typedef struct s_game
 {
@@ -16,7 +16,6 @@ typedef struct s_game
 	void	*window;
 	int		res_x;
 	int		res_y;
-
 
 // ASSETS
 	void	*dot;
@@ -31,7 +30,6 @@ typedef struct s_game
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-
 
 	int		height_fd;
 	int		width_fd;
