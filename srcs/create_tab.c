@@ -30,16 +30,18 @@ void	fill_tab_fd(t_game *game, int fd)
 	int		i;
 
 	i = 0;
-	game->tab_fd = ft_calloc(game->height_fd, sizeof(char *));
+	game->tab_fd = calloc(game->height_fd, sizeof(char *));
 	if (game->tab_fd == NULL)
 		ft_quit(fd);
 	game->tab_fd[i] = get_next_line(fd);
 	i++;
-	while (game->tab_fd)
+	while (i < game->height_fd)
 	{
-		game->tab_fd[i] = get_next_line(fd);
+		char *tmp = get_next_line(fd);
+		game->tab_fd[i] = ft_strdup(tmp);
 		if (!game->tab_fd[i])
 			break ;
+		free(tmp);
 		i++;
 	}
 	return ;
@@ -69,7 +71,7 @@ void	fd_create_tab_map(t_game *game)
 	j = 0;
 	game->map_height = 1;
 	game->map_start = 0;
-	while (game->tab_fd[i] != NULL)
+	while (i < game->height_fd)
 	{
 		while (game->tab_fd[i][j] != '\0')
 		{

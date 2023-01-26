@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 		return (1);
 	//print_tab_fd(&game);
 	//print_map(&game);
-	print_player_pos(&game);
+	//print_player_pos(&game);
 	return (0);
 }
 
@@ -25,7 +25,7 @@ void	print_tab_fd(t_game *tab)
 	i = 0;
 	while (i < tab->height_fd)
 	{
-		printf("[%d]%s\n", i, tab->tab_fd[i]);
+		printf("[%d]%s", i, tab->tab_fd[i]);
 		i++;
 	}
 }
@@ -37,7 +37,7 @@ void	print_map(t_game *tab)
 	i = 0;
 	while (i < tab->map_height - 1)
 	{
-		printf("[%d]%s\n", i, tab->map[i]);
+		printf("[%d]%s", i, tab->map[i]);
 		i++;
 	}
 }

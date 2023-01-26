@@ -16,6 +16,7 @@ typedef struct s_pos
 	int	position_y;
 	int	x;
 	int	y;
+	char	NEWS;
 }t_pos;
 
 typedef struct s_game
@@ -59,10 +60,14 @@ void	check_if_map_last(t_game *game, int i);
 void	check_map(t_game *game);
 void	check_symbol_and_doublon(t_game *game);
 void	check_end_line(t_game *game, int i, int j);
+void	init_value(t_game *game);
+void	check_few_arg(t_game *game);
+void	floodfill(int x, int y, t_game *game);
 
 //print_test
 void	print_player_pos(t_game *game);
 void	print_tab_fd(t_game *map);
 void	print_map(t_game *tab);
+void	print_floodfill(t_game *game);
 
 #endif
