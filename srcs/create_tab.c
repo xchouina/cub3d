@@ -9,7 +9,7 @@ void	fd_create_tab_fd(t_game *game, int fd, char *argv)
 	str = get_next_line(fd);
 	tmp = ft_strtrim(str, "\n");
 	free(str);
-	game->width_fd = ft_strlen(tmp);
+	// game->width_fd = ft_strlen(tmp);
 	free(tmp);
 	str = "";
 	while (str)

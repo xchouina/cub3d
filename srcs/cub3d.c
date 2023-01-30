@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 		return (1);
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
-	// starting_engine(&game);
+	starting_engine(&game);
 
 
 	//print_tab_fd(&game);

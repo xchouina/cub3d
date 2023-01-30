@@ -47,9 +47,10 @@ typedef struct s_game
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int		map_x;
+	int		map_y;
 
 	int		height_fd;
-	int		width_fd;
 	char	**map;
 	char	**tab_fd;
 	int		map_start;
