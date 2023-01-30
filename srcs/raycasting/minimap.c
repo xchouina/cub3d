@@ -13,21 +13,21 @@ void	put_img(t_game *game, int x, int y)
 		mlx_put_image_to_window(mlx, window, game->ground_mm, (25 * x), (25 * y));
 }
 
-void	map_creation(t_game *game)
-{
-	int	y;
-	int	x;
+// void	map_creation(t_game *game)
+// {
+// 	int	y;
+// 	int	x;
 
-	y = 0;
-	x = 0;
-	while (y < game->height_fd)
-	{
-		x = 0;
-		while (x < game->width_fd)
-		{
-			put_img(game, x, y);
-			x++;
-		}
-		y++;
-	}
-}
+// 	y = 0;
+// 	x = 0;
+// 	while (y < game->height_fd)
+// 	{
+// 		x = 0;
+// 		while (x < game->width_fd)
+// 		{
+// 			put_img(game, x, y);
+// 			x++;
+// 		}
+// 		y++;
+// 	}
+// }

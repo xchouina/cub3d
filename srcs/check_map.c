@@ -3,6 +3,11 @@
 void	check_map(t_game *game)
 {
 	check_symbol_and_doublon(game);
+	if(game->doublons == 0)
+	{
+		printf("No player on map\n");
+		ft_exit(game);
+	}
 	floodfill(game->player.position_x, game->player.position_y, game);
 }
 
@@ -46,8 +51,8 @@ void	check_end_line(t_game *game, int i, int j)
 	if (game->map[i][j] == 'W' || game->map[i][j] == 'E'\
 	 || game->map[i][j] == 'S' || game->map[i][j] == 'N')
 	{
-		game->player.position_x = i;
-		game->player.position_y = j;
+		game->player.position_x = j;
+		game->player.position_y = i;
 		if (game->doublons != 0)
 		{
 			printf("to mush player on map\n");
@@ -66,7 +71,8 @@ void	floodfill(int x, int y, t_game *game)
 	{
 		printf("map not close\n");
 		game->checker = 1;
-		return ;
+		// return ;
+		exit(1);
 	}
 	if (game->map[x][y] == '0' || game->map[x][y] == 'N' ||\
 	game->map[x][y] == 'E' || game->map[x][y] == 'W' || game->map[x][y] == 'S')
@@ -74,11 +80,11 @@ void	floodfill(int x, int y, t_game *game)
 		if (game->map[x][y] == 'N' || game->map[x][y] == 'E' \
 		|| game->map[x][y] == 'W' || game->map[x][y] == 'S')
 			game->player.NEWS = game->map[x][y];
-		game->map[x][y] = 'Q';
+		game->map[x][y] = '-';
 	}
 	else
 		return ;
-	print_floodfill(game);
+	//print_floodfill(game);
 	floodfill(x - 1, y, game);
 	floodfill(x, y + 1, game);
 	floodfill(x + 1, y, game);

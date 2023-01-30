@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 
 	//print_tab_fd(&game);
-	//print_map(&game);
+	print_map(&game);
 	//print_player_pos(&game);
 	return (0);
 }

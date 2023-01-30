@@ -65,7 +65,7 @@ void	starting_engine(t_game	*game)
 										// mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
 	init_assets(game);
 
-	map_creation(game);
+	//map_creation(game);
 	// mlx_put_image_to_window(game->mlx, game->window, game->wall_mm, (100 * 0), (100 * 0));
 
 	mlx_loop(game->mlx);

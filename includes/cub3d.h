@@ -20,10 +20,10 @@ typedef struct s_textures
 
 typedef struct s_pos
 {
-	int	position_x;
-	int	position_y;
-	int	x;
-	int	y;
+	int		position_x;
+	int		position_y;
+	int		x;
+	int		y;
 	char	NEWS;
 }t_pos;
 
@@ -49,7 +49,7 @@ typedef struct s_game
 	int		endian;
 
 	int		height_fd;
-	int		width_fd;
+	char	**textures_tab;
 	char	**map;
 	char	**tab_fd;
 	int		map_start;
@@ -86,6 +86,11 @@ void	check_end_line(t_game *game, int i, int j);
 void	init_value(t_game *game);
 void	check_few_arg(t_game *game);
 void	floodfill(int x, int y, t_game *game);
+void	get_text_path_no(t_game *game, int i);
+void	get_text_path_so(t_game *game, int i);
+void	get_text_path_we(t_game *game, int i);
+void	get_text_path_ea(t_game *game, int i);
+void	init_texture_tab(t_game *game);
 
 //print_test
 void	print_player_pos(t_game *game);

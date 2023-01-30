@@ -9,7 +9,6 @@ void	fd_create_tab_fd(t_game *game, int fd, char *argv)
 	str = get_next_line(fd);
 	tmp = ft_strtrim(str, "\n");
 	free(str);
-	game->width_fd = ft_strlen(tmp);
 	free(tmp);
 	str = "";
 	while (str)
@@ -30,7 +29,7 @@ void	fill_tab_fd(t_game *game, int fd)
 	int		i;
 
 	i = 0;
-	game->tab_fd = calloc(game->height_fd, sizeof(char *));
+	game->tab_fd = ft_calloc(game->height_fd, sizeof(char *));
 	if (game->tab_fd == NULL)
 		ft_quit(fd);
 	game->tab_fd[i] = get_next_line(fd);
@@ -44,6 +43,7 @@ void	fill_tab_fd(t_game *game, int fd)
 		free(tmp);
 		i++;
 	}
+	close(fd);
 	return ;
 }
 
