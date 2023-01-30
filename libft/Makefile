@@ -63,8 +63,6 @@ SRC =	ft_arrayadd.c			\
 		ft_swap.c				\
 		ft_tolower.c			\
 		ft_toupper.c			\
-		get_next_line.c			\
-		get_next_line_utils.c	\
 		ft_free2d.c				\
 		ft_strjoinf2.c			\
 		ft_strendcmp.c			\
@@ -136,9 +134,9 @@ re: fclean
 	
 clean:
 	@rm -rf $(OBJS_DIR)
-	@echo "LIBFT		| $(CYAN)OBJECTS CLEANED$(END)"
+	@echo "LIBFT	|	$(CYAN)OBJECTS CLEANED$(END)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(CURSOR_UP_1)LIBFT		| $(BLUE)LIBRARY CLEANED$(END)"
+	@echo "$(CURSOR_UP_1)LIBFT	|	$(BLUE)LIBRARY CLEANED$(END)"
 re: fclean all

@@ -17,11 +17,11 @@ char	*end_line(char *all_line, char **save)
 	char	*tmp;
 
 	free (*save);
-	*save = ft_substr(all_line, l_cnt(all_line, '\n'), \
-	ft_strlen(all_line) - l_cnt(all_line, '\n'));
-	if (ft_strchr(all_line, '\n'))
+	*save = ft_substr_gnl(all_line, l_cnt(all_line, '\n'), \
+	ft_strlen_gnl(all_line) - l_cnt(all_line, '\n'));
+	if (ft_strchr_gnl(all_line, '\n'))
 	{
-		tmp = ft_substr(all_line, 0, l_cnt(all_line, '\n'));
+		tmp = ft_substr_gnl(all_line, 0, l_cnt(all_line, '\n'));
 		free(all_line);
 		return (tmp);
 	}
@@ -32,8 +32,8 @@ char	*end_line(char *all_line, char **save)
 
 void	free_pointer(char **str, char **str2)
 {
-	if (ft_strlen(*str) > 0)
-		*str2 = ft_strjoin(*str, "");
+	if (ft_strlen_gnl(*str) > 0)
+		*str2 = ft_strjoin_gnl(*str, "");
 	free(*str);
 	*str = NULL;
 }
@@ -63,11 +63,11 @@ char	*read_line(int fd, char *all_line, int *bytes_read)
 	}
 	if (!all_line)
 	{
-		all_line = ft_substr(tampax, 0, ft_strlen(tampax));
+		all_line = ft_substr_gnl(tampax, 0, ft_strlen_gnl(tampax));
 		return (all_line);
 	}
 	tmp = all_line;
-	all_line = ft_strjoin(all_line, tampax);
+	all_line = ft_strjoin_gnl(all_line, tampax);
 	free(tmp);
 	return (all_line);
 }
@@ -81,9 +81,9 @@ char	*get_next_line(int fd)
 	all_line = NULL;
 	if (fd == -1 || fd >= 1000 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
 		return (NULL);
-	if (ft_strlen(save) > 0)
+	if (ft_strlen_gnl(save) > 0)
 		free_pointer(&save, &all_line);
-	while (!all_line || !ft_strchr(all_line, '\n'))
+	while (!all_line || !ft_strchr_gnl(all_line, '\n'))
 	{
 		all_line = read_line(fd, all_line, &bytes_read);
 		if (bytes_read == 0)
@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 		if (bytes_read < BUFFER_SIZE)
 			break ;
 	}
-	if (ft_strchr(all_line, '\n'))
+	if (ft_strchr_gnl(all_line, '\n'))
 		return (end_line(all_line, &save));
 	return (all_line);
 }

@@ -12,22 +12,22 @@
 
 #include "get_next_line.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr_gnl(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 
 	if (!s)
 		return (0);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+	if (len > ft_strlen_gnl(s))
+		len = ft_strlen_gnl(s);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (0);
-	ft_strlcpy(str, s + start, len + 1);
+	ft_strlcpy_gnl(str, s + start, len + 1);
 	return (str);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
@@ -37,7 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	if (!s1)
 		return (0);
-	dst = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	dst = malloc((ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1) * sizeof(char));
 	if (!dst)
 		return (0);
 	while (s1[i])
@@ -51,7 +51,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dst);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy_gnl(char *dst, const char *src, size_t dstsize)
 {
 	char		*a_dst;
 	const char	*a_src;
@@ -61,7 +61,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	a_src = src;
 	j = 0;
 	if (dstsize == 0)
-		return (ft_strlen(src));
+		return (ft_strlen_gnl(src));
 	while (dstsize > 1 && a_src[j] != '\0')
 	{
 		a_dst[j] = a_src[j];
@@ -74,7 +74,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (j);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	while (*s && *s != '\0')
 	{
@@ -87,7 +87,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen_gnl(const char *s)
 {
 	size_t	i;
 

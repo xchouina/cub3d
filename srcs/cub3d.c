@@ -3,15 +3,28 @@
 int	main(int argc, char **argv)
 {
 	t_game	game;
+	t_pos	player;
+	t_textures textures;
 	int		fd;
 
-	(void)argc;
+	(void)player;
+	(void)textures;
 	fd = 0;
-	// open_fd(argv[1]);
+	if (argc != 2)
+		return (1);
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
+<<<<<<< HEAD
 	//print_tab_fd(&game);
 	//print_map(&game);
+=======
+	// print_map(&game);
+	starting_engine(&game);
+
+
+	//print_tab_fd(&game);
+	//print_player_pos(&game);
+>>>>>>> ecef8aba22c6eec74574f0d09628e8fa91181c1e
 	return (0);
 }
 
@@ -22,7 +35,7 @@ void	print_tab_fd(t_game *tab)
 	i = 0;
 	while (i < tab->height_fd)
 	{
-		printf("[%d]%s\n", i, tab->tab_fd[i]);
+		printf("[%d]%s", i, tab->tab_fd[i]);
 		i++;
 	}
 }
@@ -38,3 +51,10 @@ void	print_map(t_game *tab)
 		i++;
 	}
 }
+
+void	print_player_pos(t_game *game)
+{
+	printf("player position X = %d\n", game->player.position_x);
+	printf("player position Y = %d\n", game->player.position_y);
+}
+
