@@ -14,11 +14,11 @@ int	main(int argc, char **argv)
 		return (1);
 	if (parsing(&game, fd, argv[1]) == 1)
 		return (1);
+	// print_map(&game);
 	starting_engine(&game);
 
 
 	//print_tab_fd(&game);
-	//print_map(&game);
 	//print_player_pos(&game);
 	return (0);
 }
@@ -42,7 +42,7 @@ void	print_map(t_game *tab)
 	i = 0;
 	while (i < tab->map_height - 1)
 	{
-		printf("[%d]%s", i, tab->map[i]);
+		printf("[%d]%s\n", i, tab->map[i]);
 		i++;
 	}
 }

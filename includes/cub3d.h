@@ -35,7 +35,7 @@ typedef struct s_game
 	int		res_y;
 
 // ASSETS/TEXTURES
-	void	*dot;
+	void	*player_mm;
 	void	*wall_mm;
 	void	*ground_mm;
 // 
@@ -49,6 +49,7 @@ typedef struct s_game
 	int		endian;
 	int		map_x;
 	int		map_y;
+	// int		len;
 
 	int		height_fd;
 	char	**map;

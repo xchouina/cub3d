@@ -53,8 +53,8 @@ void	init_assets(t_game	*game)
 
 	width = 100;
 	height = 100;
-	// game->ylw_dot = mlx_xpm_file_to_image(game->mlx,
-	// 		"../../textures/ylw_dot.xpm", &width, &height);
+	game->player_mm = mlx_xpm_file_to_image(game->mlx,
+			"../../textures/ylw_dot.xpm", &width, &height);
 	game->wall_mm = mlx_xpm_file_to_image(game->mlx,
 			"textures/2d_wall.xpm", &width, &height);
 	game->ground_mm = mlx_xpm_file_to_image(game->mlx,
@@ -67,7 +67,7 @@ void	starting_engine(t_game	*game)
 	sky_n_ground(game);
 	// cube_pixel(game, 100, 100);
 	// mlx_put_image_to_window(game->mlx, game->window, game->img, 0, 0);
-	// ft_arrayprint(game->map);
+	ft_arrayprint(game->map);
 	map_creation(game);
 	dprintf(2, "HELLO\n");
 	// mlx_put_image_to_window(game->mlx, game->window, game->wall_mm, (25 * 1), (25 * 1));
