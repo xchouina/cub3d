@@ -51,15 +51,23 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+<<<<<<< HEAD
 # FROM JB
 *.txt
 *.out
 *.o
+=======
+*.txt
+*.out
+>>>>>>> raycast
 *.swp
 **.a
 **.dSYM
 .DS_Store
 .vscode
+<<<<<<< HEAD
 .vscode/settings.json
+=======
+>>>>>>> raycast
 cub3D
 cub3d.dSYM
